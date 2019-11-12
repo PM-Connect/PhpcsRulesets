@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<ruleset name="PMConnect-Product">
+<ruleset name="PMConnectProductStrict">
     <description>The PMConnect Product coding standard.</description>
     <arg name="tab-width" value="4"/>
 	
@@ -99,12 +99,12 @@
     <!--</rule>-->
     <rule ref="Squiz.WhiteSpace.LanguageConstructSpacing"/>
     <rule ref="Squiz.WhiteSpace.LogicalOperatorSpacing"/>
-    <!--<rule ref="Squiz.WhiteSpace.MemberVarSpacing">-->
-    <!--<properties>-->
-    <!--<property name="spacing" value="1" />-->
-    <!--<property name="spacingBeforeFirst" value="0" />-->
-    <!--</properties>-->
-    <!--</rule>-->
+    <rule ref="Squiz.WhiteSpace.MemberVarSpacing">
+     <properties>
+       <property name="spacing" value="1" />
+       <property name="spacingBeforeFirst" value="0" />
+     </properties>
+    </rule>
     <rule ref="Squiz.WhiteSpace.ObjectOperatorSpacing">
         <properties>
             <property name="ignoreNewlines" value="true"/>
@@ -127,9 +127,32 @@
 
     <rule ref="SlevomatCodingStandard.Arrays.TrailingArrayComma"/>
     <rule ref="SlevomatCodingStandard.Classes.ClassConstantVisibility"/>
-    <!--     <rule ref="SlevomatCodingStandard.Classes.UnusedPrivateElements"/> -->
-    <!--     <rule ref="SlevomatCodingStandard.Commenting.InlineDocCommentDeclaration"/> -->
+	    <rule ref="SlevomatCodingStandard.Classes.EmptyLinesAroundClassBraces">
+        <properties>
+            <property name="linesCountBeforeClosingBrace" value="0" />
+            <property name="linesCountAfterOpeningBrace" value="0" />
+        </properties>
+    </rule>
+    <rule ref="SlevomatCodingStandard.Classes.UnusedPrivateElements"/>
+    <rule ref="SlevomatCodingStandard.Commenting.InlineDocCommentDeclaration"/>
+	<rule ref="SlevomatCodingStandard.Commenting.ForbiddenAnnotations">
+		<properties>
+			<property name="forbiddenAnnotations" type="array">
+				<element value="@author"/>
+				<element value="@version" />
+				<element value="@created" />
+				<element value="@pacakge" />
+				<element value="@copyright" />
+				<element value="@license" />
+			</property>
+		</properties>
+	</rule>
+	<rule ref="SlevomatCodingStandard.Commenting.ForbiddenComments"/>
+	<rule ref="SlevomatCodingStandard.Commenting.UselessInheritDocComment"/>
+	<rule ref="SlevomatCodingStandard.ControlStructures.AssignmentInCondition"/>
     <rule ref="SlevomatCodingStandard.ControlStructures.DisallowYodaComparison"/>
+    <rule ref="SlevomatCodingStandard.ControlStructures.UselessIfConditionWithReturn"/>
+    <rule ref="SlevomatCodingStandard.ControlStructures.UselessTernaryOperator"/>
     <rule ref="SlevomatCodingStandard.Exceptions.DeadCatch"/>
     <!--<rule ref="SlevomatCodingStandard.Exceptions.ReferenceThrowableOnly"/>-->
     <rule ref="SlevomatCodingStandard.Namespaces.AlphabeticallySortedUses">
@@ -144,6 +167,9 @@
             <property name="allowFullyQualifiedGlobalClasses" value="true" />
             <property name="allowFullyQualifiedGlobalFunctions" value="true" />
             <property name="allowFullyQualifiedExceptions" value="true"/>
+<!--            <property name="allowFallbackGlobalFunctions" value="false"/>-->
+<!--            <property name="allowFallbackGlobalConstants" value="false"/>-->
+<!--            <property name="allowPartialUses" value="false"/>-->			
             <property name="allowPartialUses" value="false"/>
             <property name="fullyQualifiedKeywords" type="array" value="
                 T_EXTENDS,
@@ -169,15 +195,11 @@
     <rule ref="SlevomatCodingStandard.TypeHints.NullableTypeForNullDefaultValue"/>
     <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHintSpacing"/>
     <rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHintSpacing"/>
-    <rule ref="SlevomatCodingStandard.Classes.EmptyLinesAroundClassBraces">
-        <properties>
-            <property name="linesCountBeforeClosingBrace" value="0" />
-            <property name="linesCountAfterOpeningBrace" value="0" />
-        </properties>
-    </rule>
 
     <rule ref="MoxioSniffs.PHP.DisallowBareContinueInSwitch" />
     <rule ref="MoxioSniffs.PHP.DisallowImplicitLooseComparison" />
 <!--    <rule ref="MoxioSniffs.PHP.DisallowUniqidWithoutMoreEntropy" />-->
     <rule ref="MoxioSniffs.PHP.DisallowArrayCombinersWithSingleArray" />
+	<rule ref="SlevomatCodingStandard.PHP.UselessParentheses"/>
+	<rule ref="SlevomatCodingStandard.PHP.UselessSemicolon"/>
 </ruleset>
