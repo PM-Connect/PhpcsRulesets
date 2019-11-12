@@ -84,10 +84,13 @@
     <rule ref="Squiz.PHP.LowercasePHPFunctions"/>
     <rule ref="Squiz.PHP.NonExecutableCode"/>
     <rule ref="Squiz.Scope.StaticThisUsage"/>
-    <!--<rule ref="Squiz.Strings.DoubleQuoteUsage"/>-->
-    <!--<rule ref="Squiz.Strings.DoubleQuoteUsage.ContainsVar">-->
-
-    <!--</rule>-->
+	<rule ref="Squiz.Strings.ConcatenationSpacing">
+		<properties>
+			<property name="spacing" value="1" />
+		</properties>
+	</rule>
+    <rule ref="Squiz.Strings.DoubleQuoteUsage"/>
+    <rule ref="Squiz.Strings.DoubleQuoteUsage.ContainsVar"/>
     <rule ref="Squiz.Strings.EchoedStrings"/>
     <rule ref="Squiz.WhiteSpace.CastSpacing"/>
     <!--<rule ref="Squiz.WhiteSpace.FunctionOpeningBraceSpace"/>-->
@@ -141,7 +144,7 @@
 				<element value="@author"/>
 				<element value="@version" />
 				<element value="@created" />
-				<element value="@pacakge" />
+				<element value="@package" />
 				<element value="@copyright" />
 				<element value="@license" />
 			</property>
