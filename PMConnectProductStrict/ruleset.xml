@@ -205,4 +205,6 @@
     <rule ref="MoxioSniffs.PHP.DisallowArrayCombinersWithSingleArray" />
 	<rule ref="SlevomatCodingStandard.PHP.UselessParentheses"/>
 	<rule ref="SlevomatCodingStandard.PHP.UselessSemicolon"/>
+	
+	<rule ref="PMConnectProductStrict.Functions.ParameterCount" />
 </ruleset>
